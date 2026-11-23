@@ -115,28 +115,3 @@ app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"], allo
 
 預設使用 OpenStreetMap。若想換成國土測繪中心（NLSC）的電子地圖圖磚，修改 `src/config.js` 的 `TILE`。
 圖磚網址格式與使用條款請到 NLSC 官方網站確認後再替換，並更新 `attribution`。
-
-## 上傳到 GitHub
-
-```bash
-git init
-git add .
-git commit -m "feat: 防災情資面板前端雛型"
-git branch -M main
-git remote add origin https://github.com/<帳號>/<repo 名稱>.git
-git push -u origin main
-```
-
-如果組內已經有共用 repo，建議先 clone 下來，把檔案複製進去，開一個分支（例如 `pg1/frontend-prototype`）推上去，再發 Pull Request 給 PM 或組員確認。
-
-## 發布到 GitHub Pages（選用）
-
-專案內已附 `.github/workflows/deploy.yml`。到 repo 的 Settings > Pages，把 Source 設為 GitHub Actions，之後 push 到 `main` 就會自動建置並發布。
-
-## 之後可以做的事
-
-- 縣市篩選、狀態篩選
-- 水位、雨量的歷史曲線圖（可改用 Chart.js 或 ECharts）
-- CCTV 影像串流（等 SA 確認資料來源）
-- 警戒值門檻線與說明
-- 底圖切換、圖層透明度
